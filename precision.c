@@ -16,9 +16,8 @@ char *get_precision(char *s, params_t *params, va_list ap)
 	if (*s != '.')
 	{
 		return (s);
+		s++;
 	}
-
-	s++;
 
 	if (*s == '*')
 	{
