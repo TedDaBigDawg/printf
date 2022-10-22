@@ -1,5 +1,5 @@
-#ifndef _PRINTF_H_
-#define _PRINTF_H_
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 #include <stdio.h>
@@ -78,9 +78,11 @@ int print_octal(va_list ap, params_t *params);
 int print_binary(va_list ap, params_t *params);
 int print_hex(va_list ap, params_t *params);
 int print_HEX(va_list ap, params_t *params);
+int print_unsigned(va_list ap, params_t *params);
+int print_address(va_list ap, params_t *params);
 
 /* Special printf functions handlers */
-int (*get_specifiers(char *s))(va_list ap, params_t *params);
+int (*get_specifier(char *s))(va_list ap, params_t *params);
 int get_print_func(char *s, va_list ap, params_t *params);
 int get_flag(char *s, params_t *params);
 int get_modifier(char *s, params_t *params);
@@ -95,6 +97,8 @@ int _strlen(char *s);
 int print_number(char *str, params_t *params);
 int print_number_right_shift(char *str, params_t *params);
 int print_number_left_shift(char *str, params_t *params);
+
+char *convert(long int num, int base, int flags, params_t *params);
 
 char *get_precision(char *p, params_t *params, va_list ap);
 /* Function */

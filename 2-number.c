@@ -37,8 +37,10 @@ int print_from_to(char *start, char *stop, char *except)
 int print_rev(va_list ap, params_t *params)
 {
 	int len, sum = 0;
+	char *str;
 	(void)params;
-	char *str = va_arg(ap, char *);
+
+	str = va_arg(ap, char *);
 
 	if (str)
 	{
@@ -76,7 +78,7 @@ int print_rot13(va_list ap, params_t *params)
 	index = 0;
 	i = 0;
 
-	while(a[i])
+	while (a[i])
 	{
 		if ((a[i] >= 'A' && a[i] <= 'Z') || (a[i] >= 'a' && a[i] <= 'z'))
 		{

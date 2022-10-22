@@ -20,7 +20,7 @@ int print_hex(va_list ap, params_t *params)
 	}
 	else if (params->h_modifier)
 	{
-		l + (unsigned short int)va_arg(ap, unsigned int);
+		l = (unsigned short int)va_arg(ap, unsigned int);
 	}
 	else
 	{
@@ -88,9 +88,9 @@ int print_HEX(va_list ap, params_t *params)
 
 int print_binary(va_list ap, params_t *params)
 {
-	unsigned int n va_arg(ap, unsigned int);
-	int c = 0;
+	unsigned int n = va_arg(ap, unsigned int);
 	char *str = convert(n, 2, CONVERT_UNSIGNED, params);
+	int c = 0;
 
 	if (params->hashtag_flag && n)
 	{
