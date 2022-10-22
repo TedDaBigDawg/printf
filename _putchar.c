@@ -26,7 +26,7 @@ int _puts(char *str)
  * Return: 1 if success, and -1 if failed
  */
 
-int _putchar(int c)
+int _putchar(char c)
 {
 	static int i;
 	static char buf[OUTPUT_BUF_SIZE];
